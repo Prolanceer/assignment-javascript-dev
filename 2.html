@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+	                                   // function getObjPath with two parameters is created
+function getObjectPath(jsobj,path)
+{
+	this.jsobj=jsobj;                 //the value of this is the object that owns the function
+	this.path=path;
+}
+ 
+ var address= new getObjectPath("furniture","http://bit.ly/2EfQcdC");
+                                          
+if (address.path == null)            //if path for getObjPath is not given then it will return null
+	{
+		document.getElementById("demo").innerHTML= "null";
+	} 
+	else                            //if path for getObjPath is given then it will return value of path.     
+	{
+        document.getElementById("demo").innerHTML = address.path;
+	}
+
+
+
+</script>
+</body>
+</html>

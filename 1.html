@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+	                                 // function getObjPath with two parameters is created
+function getObjPath(jsobj,path)
+{
+	this.jsobj=jsobj;                //the value of this is the object that owns the function
+	this.path=path;
+}
+ var address= new getObjPath();       // getObjPath is an object constructor
+ address.jsobj= prompt('write any object name'); //i have made use of prompt in order to capture users input and users input will be initialised to address.jsobj
+ var x = address.path= prompt('write any path related to object');
+                                     //here the path of getObjPath is initialised to address.path which is given by user . address.value=x;
+	if ( x=="" )                     //if path for getObjPath is not given then it will return null
+		{
+			document.getElementById("demo").innerHTML = "null";
+		} 
+	else                            //if path for getObjPath is given then it will return value of path.
+		{
+        	document.getElementById("demo").innerHTML = x;
+		}
+
+</script>
+</body>
+</html>
